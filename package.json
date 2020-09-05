@@ -1,0 +1,19 @@
+{
+  "name": "budgety-backend",
+  "version": "0.1.0",
+  "description": "backend node.js + express app for budgety app.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo 'no tests currently implemented'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nandahibatullah/budgety-backend.git"
+  },
+  "author": "Nanda Hibatullah",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nandahibatullah/budgety-backend/issues"
+  },
+  "homepage": "https://github.com/nandahibatullah/budgety-backend#readme"
+}
