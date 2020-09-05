@@ -2,8 +2,9 @@
   "name": "budgety-backend",
   "version": "0.1.0",
   "description": "backend node.js + express app for budgety app.",
-  "main": "app.js",
+  "main": "src/app.js",
   "scripts": {
+    "start": "node .",
     "test": "echo 'no tests currently implemented'"
   },
   "repository": {
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/nandahibatullah/budgety-backend/issues"
   },
-  "homepage": "https://github.com/nandahibatullah/budgety-backend#readme"
+  "homepage": "https://github.com/nandahibatullah/budgety-backend#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
