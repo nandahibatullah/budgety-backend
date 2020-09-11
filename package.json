@@ -1,9 +1,9 @@
 {
   "name": "budgety-backend",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "backend node.js + express app for budgety app.",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "yarn run jest",
     "watch": "tsc -w",
     "lint": "eslint ./ --ext .ts"
   },
@@ -20,13 +20,20 @@
   "dependencies": {},
   "devDependencies": {
     "@types/aws-sdk": "^2.7.0",
+    "@types/jest": "^26.0.13",
     "@types/node": "^14.6.4",
     "@typescript-eslint/eslint-plugin": "^4.0.1",
     "@typescript-eslint/parser": "^4.0.1",
     "eslint": "^7.8.1",
+    "eslint-config-airbnb": "^18.2.0",
     "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-config-airbnb-typescript": "^10.0.0",
     "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-react": "^7.20.6",
+    "jest": "^26.4.2",
     "serverless-plugin-typescript": "^1.1.9",
+    "ts-jest": "^26.3.0",
     "typescript": "^4.0.2"
   }
 }
