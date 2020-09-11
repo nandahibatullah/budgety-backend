@@ -7,8 +7,9 @@ describe('hello', () => {
 
   it('should return a successful message', async () => {
     const exptectedMesssage = 'Go Serverless v1.0! Your function executed successfully!';
-    const actualResponse = await hello();
-    expect(JSON.parse(actualResponse.body).message).toEqual(exptectedMesssage);
-    expect(actualResponse.statusCode).toEqual(200);
+    const response = await hello();
+    const actualMessage = JSON.parse(response.body).message;
+    expect(response.statusCode).toEqual(200);
+    expect(actualMessage).toEqual(exptectedMesssage);
   });
 });

@@ -1,2 +1,4 @@
 # budgety-backend
-Node.js + Express backend app for Budgety
+
+Serverless Node.js backend app for Budgety built using the Serverless framework,
+AWS Lambda Functions, written in Typscript.
