@@ -12,4 +12,6 @@ parserOptions:
   sourceType: module
 plugins:
   - '@typescript-eslint'
-rules: {}
+rules: {
+  "import/prefer-default-export": "off",
+}
