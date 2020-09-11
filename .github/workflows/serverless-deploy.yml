@@ -1,0 +1,40 @@
+name: Serverless Deploy
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    name: deploy
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.x]
+    steps:
+    - name: wait for build to pass
+      uses: fountainhead/action-wait-for-check@v1.0.0
+      id: wait-for-build
+      with:
+        token: ${{ secrets.REPO_READ_TOKEN }}
+        checkName: test (12.x)
+        ref: ${{ github.event.pull_request.head.sha || github.sha }}
+    - name: checkout branch
+      uses: actions/checkout@v2
+    - name: using Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: install dependencies
+      run: yarn install --frozen-lockfile
+    - name: serverless deploy
+      if: steps.wait-for-build.outputs.conclusion == 'success'
+      uses: serverless/github-action@master
+      with:
+        args: deploy
+      env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+    - name: exit
+      if: steps.wait-for-build.outputs.conclusion == 'failure'
+      run: exit 1
