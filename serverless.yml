@@ -2,6 +2,7 @@ service: budgety-backend
 
 plugins:
   - serverless-plugin-typescript
+  - serverless-offline
 
 provider:
   name: aws
